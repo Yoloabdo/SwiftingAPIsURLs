@@ -15,12 +15,15 @@ enum Paths: String {
 
 
 enum URLsFactory{
-    case app(Paths)
+    case app(Paths,Int,Int)
+    case appSimple(Paths)
     case chat(Paths)
     
     var link: URL {
         switch self {
-        case .app(let path):
+        case .app(let path, let page, let limit):
+            return URL(string: "\(AppLinks.MainDomain)/\(path.rawValue)?page=\(page)&limit=\(limit)")!
+        case .appSimple(let path):
             return URL(string: "\(AppLinks.MainDomain)/\(path.rawValue)")!
         case .chat(let path):
             return URL(string: "\(AppLinks.SubDomainChat)/\(path.rawValue)")!
@@ -29,6 +32,7 @@ enum URLsFactory{
 }
 
 
-URLsFactory.app(.mainStream).link
+let x = URLsFactory.app(.mainStream, 15, 15).link
+
 
 
