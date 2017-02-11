@@ -2,12 +2,12 @@
 
 import UIKit
 
-struct appLinks {
+struct AppLinks {
     static let MainDomain = "www.sdfasd.asdf"
     static let SubDomainChat = MainDomain.appending("/chat")
 }
 
-enum paths: String {
+enum Paths: String {
     case mainStream = "path"
     case profileGame = "profileGame"
     case follow = "follow"
@@ -15,15 +15,15 @@ enum paths: String {
 
 
 enum URLsFactory{
-    case app(paths)
-    case chat(paths)
+    case app(Paths)
+    case chat(Paths)
     
     var link: URL {
         switch self {
         case .app(let path):
-            return URL(string: "\(appLinks.MainDomain)/\(path.rawValue)")!
+            return URL(string: "\(AppLinks.MainDomain)/\(path.rawValue)")!
         case .chat(let path):
-            return URL(string: "\(appLinks.SubDomainChat)/\(path.rawValue)")!
+            return URL(string: "\(AppLinks.SubDomainChat)/\(path.rawValue)")!
         }
     }
 }
