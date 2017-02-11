@@ -15,13 +15,13 @@ enum Paths: String {
 
 
 enum URLsFactory{
-    case app(Paths,Int,Int)
+    case getWithPaging(Paths, page: Int, limit: Int)
     case appSimple(Paths)
     case chat(Paths)
     
     var link: URL {
         switch self {
-        case .app(let path, let page, let limit):
+        case .getWithPaging(let path, let page, let limit):
             return URL(string: "\(AppLinks.MainDomain)/\(path.rawValue)?page=\(page)&limit=\(limit)")!
         case .appSimple(let path):
             return URL(string: "\(AppLinks.MainDomain)/\(path.rawValue)")!
@@ -32,7 +32,7 @@ enum URLsFactory{
 }
 
 
-let x = URLsFactory.app(.mainStream, 15, 15).link
+let x = URLsFactory.getWithPaging(.mainStream, page: 15, limit: 15).link
 
 
 
