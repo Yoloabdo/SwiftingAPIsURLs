@@ -24,9 +24,8 @@ enum URLsFactory{
     }
     
     var mainDomain: String {
-        get { return "www.example.com" }
+        return "www.example.com"
     }
-    
 }
 
 
