@@ -2,19 +2,20 @@
 
 import UIKit
 
-struct AppLinks {
-    static let MainDomain = "www.sdfasd.asdf"
-    static let SubDomainChat = MainDomain.appending("/chat")
-}
-
-enum Paths: String {
-    case mainStream = "path"
-    case profileGame = "profileGame"
-    case follow = "follow"
-}
 
 
 enum URLsFactory{
+    
+    enum WebService: String {
+        case MainDomain = "www.example.com"
+    }
+    
+    enum Paths: String {
+        case mainStream = "path"
+        case profileGame = "profileGame"
+        case follow = "follow"
+    }
+    
     case getWithPaging(Paths, page: Int, limit: Int)
     case appSimple(Paths)
     case chat(Paths)
@@ -22,11 +23,11 @@ enum URLsFactory{
     var link: URL {
         switch self {
         case .getWithPaging(let path, let page, let limit):
-            return URL(string: "\(AppLinks.MainDomain)/\(path.rawValue)?page=\(page)&limit=\(limit)")!
+            return URL(string: "\(WebService.MainDomain.rawValue)/\(path.rawValue)?page=\(page)&limit=\(limit)")!
         case .appSimple(let path):
-            return URL(string: "\(AppLinks.MainDomain)/\(path.rawValue)")!
+            return URL(string: "\(WebService.MainDomain.rawValue)/\(path.rawValue)")!
         case .chat(let path):
-            return URL(string: "\(AppLinks.SubDomainChat)/\(path.rawValue)")!
+            return URL(string: "\(WebService.MainDomain.rawValue)/\(path.rawValue)")!
         }
     }
 }
