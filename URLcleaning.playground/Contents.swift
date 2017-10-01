@@ -13,9 +13,9 @@ enum URLsFactory {
 // api paths
 extension URLsFactory{
     enum Paths: String {
-        case mainStream = "path"
-        case profileGame = "profileGame"
-        case follow = "follow"
+        case mainStream
+        case profileGame
+        case follow 
     }
 }
 
@@ -24,22 +24,30 @@ extension URLsFactory {
     var url: URL {
         switch self {
         case .simpleCall(let path, let page, let limit):
-            return URL(string: "\(mainDomain)/\(path.rawValue)?page=\(page)&limit=\(limit)")!
+            // create query items
+            let pageQuery = URLQueryItem(name: "page", value: "\(page)")
+            let limitQuery = URLQueryItem(name: "limit", value: "\(limit)")
+            // add path to main url
+            let url = mainDomain.appendingPathComponent(path.rawValue)
+            // create components builder
+            var component = URLComponents(url: url, resolvingAgainstBaseURL: true)!
+            // add queries
+            component.queryItems = [pageQuery, limitQuery]
+            return component.url!
         case .appSimple(let path):
-            return URL(string: "\(mainDomain)/\(path.rawValue)")!
+            return mainDomain.appendingPathComponent(path.rawValue, isDirectory: true)
         }
     }
 }
 
 // main webservice url
 extension URLsFactory{
-    var mainDomain: String {
-        return "www.example.com"
+    var mainDomain: URL {
+        return URL(string: "www.example.com")!
     }
 }
 
-let urlWithPaging = URLsFactory.simpleCall(.mainStream, page: 15, limit: 15).url
+let urlWithPaging = URLsFactory.simpleCall(.profileGame, page: 15, limit: 15).url
 let url = URLsFactory.appSimple(.profileGame).url
-
 
 
