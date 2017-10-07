@@ -15,7 +15,7 @@ extension URLsFactory{
     enum Paths: String {
         case mainStream
         case profileGame
-        case follow 
+        case follow
     }
 }
 
@@ -42,8 +42,18 @@ extension URLsFactory {
 
 // main webservice url
 extension URLsFactory{
+    // scheme var gets current config for the build
+    var scheme: String {
+        return Bundle.main.object(forInfoDictionaryKey: "Config") as! String
+    }
+    // update the mainDomain url to check the configuration naming and return results accordingly
     var mainDomain: URL {
-        return URL(string: "www.example.com")!
+        switch scheme {
+        case "Development":
+            return URL(string: "dev.google.com/api/")!
+        default:
+            return URL(string: "google.com/api_mobile/")!
+        }
     }
 }
 
