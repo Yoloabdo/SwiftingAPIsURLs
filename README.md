@@ -5,7 +5,7 @@
 [![Platform](https://img.shields.io/cocoapods/p/AlamofireNetworkActivityIndicator.svg?style=flat)](http://cocoadocs.org/docsets/AlamofireNetworkActivityIndicator)
 [![Twitter](https://img.shields.io/badge/Twitter-yoloabdo-blue.svg)](http://twitter.com/Yoloabdo)
 
-Controls the visibility of the network activity indicator on iOS using Alamofire.
+Time to take over your API strings. 
 
 ## Features
 
