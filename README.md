@@ -1,5 +1,5 @@
+![Swifting APIs](https://i.imgur.com/kWaYpua.png)
 # (Swifting APIs) handling APIs on swift
-
 
 [![Development Language](https://img.shields.io/badge/Language-Swift%203%2F4-brightgreen.svg)](https://github.com/apple/swift)
 [![Platform](https://img.shields.io/cocoapods/p/AlamofireNetworkActivityIndicator.svg?style=flat)](http://cocoadocs.org/docsets/AlamofireNetworkActivityIndicator)
@@ -182,7 +182,7 @@ google.com/api_mobile/       // for production one
 ```
 First of all we need to setup Xcode to use different schemes for both production and development configurations, check this gif, very easy to follow:
 
-![Gif](https://giphy.com/gifs/ios-swift-scheme-3o7aDdz6lz7IJlOssE?utm_source=iframe&utm_medium=embed&utm_campaign=Embeds&utm_term=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%3A%2F%2Fgiphy.com%2Fembed%2F3o7aDdz6lz7IJlOssE%2Ftwitter%2Fiframe&%3Burl=https%3A%2F%2Fgiphy.com%2Fgifs%2Fios-swift-scheme-3o7aDdz6lz7IJlOssE&%3Bimage=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F3o7aDdz6lz7IJlOssE%2Fgiphy.gif&%3Bkey=a19fcc184b9711e1b4764040d3dc5c07&%3Btype=text%2Fhtml&%3Bschema=giphy)
+<iframe src="https://giphy.com/embed/3o7aDdz6lz7IJlOssE" width="480" height="306" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ios-swift-scheme-3o7aDdz6lz7IJlOssE">via GIPHY</a></p>
 
 You duplicate release configurations, then you create new scheme for your app, call it for clarity: YourAppNameDevelopment.
 
@@ -191,12 +191,10 @@ Easy, right? now let’s do the next step on detecting this configurations on ou
 How to detect this? it will be via our info.plist file, will add a new var to it and let’s call it “Config” and give it a value: $(CONFIGURATION).
 
 
-![gif](https://giphy.com/gifs/ios-swift-production-3ohhwMuhXCDSlsvfna?utm_source=iframe&utm_medium=embed&utm_campaign=Embeds&utm_term=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%3A%2F%2Fgiphy.com%2Fembed%2F3ohhwMuhXCDSlsvfna%2Ftwitter%2Fiframe&%3Burl=https%3A%2F%2Fgiphy.com%2Fgifs%2Fios-swift-production-3ohhwMuhXCDSlsvfna&%3Bimage=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F3ohhwMuhXCDSlsvfna%2Fgiphy.gif&%3Bkey=a19fcc184b9711e1b4764040d3dc5c07&%3Btype=text%2Fhtml&%3Bschema=giphy)
+<iframe src="https://giphy.com/embed/3ohhwMuhXCDSlsvfna" width="480" height="294" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ios-swift-production-3ohhwMuhXCDSlsvfna">via GIPHY</a></p>
 
 Now we can read from info.plist what configuration is being used by our current build, now let’s make sure the build is using the development config too!
-
-![gif](https://giphy.com/gifs/ios-swift-scheme-3ov9k49KEq7MLv6Eco?utm_source=iframe&utm_medium=embed&utm_campaign=Embeds&utm_term=https%3A%2F%2Fcdn.embedly.com%2Fwidgets%2Fmedia.html%3Fsrc%3Dhttps%3A%2F%2Fgiphy.com%2Fembed%2F3ov9k49KEq7MLv6Eco%2Ftwitter%2Fiframe&%3Burl=https%3A%2F%2Fgiphy.com%2Fgifs%2Fios-swift-scheme-3ov9k49KEq7MLv6Eco&%3Bimage=https%3A%2F%2Fmedia.giphy.com%2Fmedia%2F3ov9k49KEq7MLv6Eco%2Fgiphy.gif&%3Bkey=a19fcc184b9711e1b4764040d3dc5c07&%3Btype=text%2Fhtml&%3Bschema=giphy)
-
+<iframe src="https://giphy.com/embed/3ohhwMuhXCDSlsvfna" width="480" height="294" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ios-swift-production-3ohhwMuhXCDSlsvfna">via GIPHY</a></p>
 ###### Now Xcode is all set, time to get code in action!
 
 ---
