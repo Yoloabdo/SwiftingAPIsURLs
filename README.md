@@ -181,8 +181,7 @@ dev.google.com/api/          // for development url
 google.com/api_mobile/       // for production one
 ```
 First of all we need to setup Xcode to use different schemes for both production and development configurations, check this gif, very easy to follow:
-
-<iframe src="https://giphy.com/embed/3o7aDdz6lz7IJlOssE" width="480" height="306" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ios-swift-scheme-3o7aDdz6lz7IJlOssE">via GIPHY</a></p>
+<img height=600 src="https://media.giphy.com/media/3o7aDdz6lz7IJlOssE/giphy.gif">
 
 You duplicate release configurations, then you create new scheme for your app, call it for clarity: YourAppNameDevelopment.
 
@@ -190,11 +189,12 @@ Easy, right? now let’s do the next step on detecting this configurations on ou
 
 How to detect this? it will be via our info.plist file, will add a new var to it and let’s call it “Config” and give it a value: $(CONFIGURATION).
 
-
-<iframe src="https://giphy.com/embed/3ohhwMuhXCDSlsvfna" width="480" height="294" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ios-swift-production-3ohhwMuhXCDSlsvfna">via GIPHY</a></p>
+<img height=600 src="https://media.giphy.com/media/3ohhwMuhXCDSlsvfna/giphy.gif">
 
 Now we can read from info.plist what configuration is being used by our current build, now let’s make sure the build is using the development config too!
-<iframe src="https://giphy.com/embed/3ohhwMuhXCDSlsvfna" width="480" height="294" frameBorder="0" class="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/ios-swift-production-3ohhwMuhXCDSlsvfna">via GIPHY</a></p>
+
+<img height=600 src="https://media.giphy.com/media/3ov9k49KEq7MLv6Eco/giphy.gif">
+
 ###### Now Xcode is all set, time to get code in action!
 
 ---
@@ -244,5 +244,7 @@ This long piece has been on medium as 3 parts:
 To get more about the power of Enums, I reccomend this article: 
 
 [Advanced & Practical Enum usage in Swift](https://appventure.me/2015/10/17/advanced-practical-enum-examples/)
+
+Don't forget to git the attached playground for the complete project!
 
 Happy coding! 
